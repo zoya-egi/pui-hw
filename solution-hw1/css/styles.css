@@ -1,3 +1,5 @@
+
+/* image classes */
 img.logo {
     padding: 40px;
 }
@@ -5,7 +7,7 @@ img.logo {
 img.gallery {
     display: block;
     border: 2px solid black;
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -17,6 +19,14 @@ img.shop_items {
     width: 9%;
 }
 
+img.details {
+    display: block;
+    border: 2px solid black;
+    width: 25%;
+    margin: auto;
+}
+
+/* div classes */
 div.menu {
     text-align: center;
     padding-top: 10px;
@@ -37,6 +47,7 @@ div.items:hover {
     background-color: yellow;
 }
 
+/* a tag classes */
 a {
     color: black;
     text-decoration:none;
@@ -48,8 +59,10 @@ a {
 a.current_page {
     background-color: yellow;
     font-weight: 600;
+    padding: 1px;
 }
 
+/* header 1 classes */
 h1 {
     color: black;
     font-size:28px;
@@ -58,6 +71,7 @@ h1 {
     font-weight: 300;
 }
 
+/* horizontal line classes */
 hr {
     color: black;
     border: 1px solid black;
@@ -70,6 +84,7 @@ hr.total {
     margin-right: 25%;
 }
 
+/* paragraph classes */
 p {
     color: black;
     margin: 0em;
@@ -111,4 +126,51 @@ p.shop_price {
     font-size:20px;
     font-weight: 400;
 }
+
+p.details {
+    text-align: left;
+    margin-left: 40%;
+}
+
+p.details_total {
+    display: inline-block;
+    font-weight: 400;
+    margin-left: 41%;
+    margin-right: 3%;
+}
+
+/* dropdown menu */
+select {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    margin-left: 40%;
+    margin-top: 5px;
+    width: 18%;
+    margin-left: 40%;
+}
+
+/* button styling */
+button {
+    display: inline-block;
+    background-color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    width: 10%;
+
+}
+
+button.checkout {
+    display: block;
+    margin: auto;
+}
+
+button:hover {
+    font-weight: 600;
+    background-color: yellow;
+}
+
+
+
+
+
 
