@@ -1,5 +1,5 @@
 # PUI homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed Website: https://zoya-egi.github.io/pui-hw/solution-hw1/
 
-Repository link: `add the URL to this repository`
+Repository Link: https://github.com/zoya-egi/pui-hw
