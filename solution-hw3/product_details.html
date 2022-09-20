@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <!--Logo that links to product page-->
+      <div class="containerLogo">
+        <a href = "index.html">
+          <img src="./assets/logo/logo-01.svg" alt = "Logo of Bun Bun Bake Shop" class = "logo"> 
+        </a>
+      </div>
+      <!--Menu Links-->
+      <div class = "containerContent">
+        <div class="containerContentUpper">
+          <div class = "navMenu">
+              <a href="./index.html" class="current_page">PRODUCTS</a>
+          </div>
+          <div class = "navMenu">
+                <a href="./cart.html">CART</a>
+          </div>
+        </div>
+        <div>
+          <br><hr>
+        </div>
+        <!--Header-->
+        <div class = "containerContentBottom">
+          <h1>
+              Original cinnamon roll
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="detailsContainer">
+      <img src="./assets/products/original-cinnamon-roll.jpg" class="details" alt = "Original cinnamon roll">
+      <div class="detailsContent">
+        <p class= "details">
+          Customize our delicious,<br>hand-made cinnamon roll to<br>your liking!
+        </p>
+
+        <br><br><br><br><br>
+
+        <!--drop down menus here-->
+        <p class= "details">
+          Glazing:
+        </p>
+
+        <!--selection for type of glaze-->
+        <select class="dropdowns">
+          <option value = "0">Keep original</option>
+          <option value = "1">Sugar milk</option>
+          <option value = "2">Vanilla milk</option>
+          <option value = "3">Double chocolate</option>
+        </select>
+
+        <br><br><br><br>
+
+        <p class= "details">
+          Pack size:
+        </p>
+
+        <!--selection for number of cinnamon buns-->
+        <select>
+          <option value = "0">1</option>
+          <option value = "0">3</option>
+          <option value = "0">6</option>
+          <option value = "0">12</option>
+        </select>
+
+        <br><br><br><br><br><br><br><br>
+
+        <!--Total and button-->
+        <p class = "details_total">
+          $ 2.49
+        </p>
+
+        <button>
+          Add to Cart
+        </button>
+
+      </div>
+    </div>
+  </body>
+</html>

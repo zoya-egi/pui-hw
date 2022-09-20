@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <!--Logo that links to product page-->
+    <div class="containerLogo">
+      <a href="index.html">
+        <img src="./assets/logo/logo-01.svg" alt="Logo of Bun Bun Bake Shop" class="logo">
+      </a>
+    </div>
+    <!--Menu Links-->
+    <div class="containerContent">
+      <div class="containerContentUpper">
+        <div class="navMenu">
+          <a href="./index.html">PRODUCTS</a>
+        </div>
+        <div class="navMenu">
+          <a href="./cart.html" class="current_page">CART</a>
+        </div>
+      </div>
+      <div>
+        <br>
+        <hr>
+      </div>
+      <!--Header-->
+      <div class="containerContentBottom">
+        <h1>
+          Shopping Cart
+          <br><br><br>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <!--cart items listed in this div-->
+  <div class="cartContainer">
+    <div class="cartContent">
+      <!--1st cart item, original cinnamon roll-->
+      <div class="cartItem">
+        <div class="cartItemUpper">
+          <!--Image-->
+          <img src="./assets/products/original-cinnamon-roll.jpg" class="shop_items" alt="original cinnamon roll">
+          <div class="cartItemDescription">
+            <!--Description-->
+            <p class="shop_items">
+              Original Cinnamon Roll<br>Glazing: Keep original<br>Pack Size: 1
+            </p>
+            <p class="shop_price">
+              $ 2.49
+            </p>
+          </div>
+        </div>
+        <div class="cartItemLower">
+          <p class="remove">
+            Remove
+          </p>
+        </div>
+      </div>
+
+      <!--2st cart item, double chocolate cinnamon roll-->
+      <div class="cartItem">
+        <div class="cartItemUpper">
+          <!--Image-->
+          <img src="./assets/products/double-chocolate-cinnamon-roll.jpg" class="shop_items"
+            alt="double chocolate cinnamon roll">
+          <div class="cartItemDescription">
+            <!--Description-->
+            <p class="shop_items">
+              Double Chocolate Cinnamon Roll<br>Glazing: Sugar milk<br>Pack Size: 6
+            </p>
+            <p class="shop_price">
+              $ 27.45
+            </p>
+          </div>
+        </div>
+        <div class="cartItemLower">
+          <p class="remove">
+            Remove
+          </p>
+        </div>
+      </div>
+
+      <!--line break & total-->
+      <hr>
+      <div class="cartItem">
+        <div class="cartItemUpper">
+          <div class="cartCheckout">
+            <p class="shop_items">
+              Total
+            </p>
+            <p class="shop_price">
+              $ 29.94
+            </p>
+          </div>
+        </div>
+        <div class="cartButton">
+          <button class="checkout">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
