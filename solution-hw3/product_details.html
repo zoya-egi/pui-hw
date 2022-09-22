@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <!--Header of page-->
     <div class="container">
       <!--Logo that links to product page-->
       <div class="containerLogo">
@@ -30,7 +31,7 @@
         <div>
           <br><hr>
         </div>
-        <!--Header-->
+        <!--Heading-->
         <div class = "containerContentBottom">
           <h1>
               Original cinnamon roll
@@ -38,6 +39,8 @@
         </div>
       </div>
     </div>
+
+    <!--Main part of page-->
     <div class="detailsContainer">
       <img src="./assets/products/original-cinnamon-roll.jpg" class="details" alt = "Original cinnamon roll">
       <div class="detailsContent">
@@ -52,7 +55,7 @@
           Glazing:
         </p>
 
-        <!--selection for type of glaze-->
+        <!--dynamic selection for type of glaze-->
         <select id = "glazeDropdown" onchange = "glazingChange(this)">
         </select>
 
@@ -62,7 +65,7 @@
           Pack size:
         </p>
 
-        <!--selection for number of cinnamon buns-->
+        <!--dynamic selection for number of cinnamon buns-->
         <select id = "packDropdown" onchange = "glazingChange(this)">
         </select>
 
@@ -76,12 +79,14 @@
             </p>
           </div>
           <div>
-            <button class="addToCart">
+            <button>
               Add to Cart
             </button>
           </div>
         </div>
       </div>
     </div> <br><br><br><br><br><br>
+
+
   </body>
 </html>
