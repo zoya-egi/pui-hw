@@ -63,25 +63,25 @@
         </p>
 
         <!--selection for number of cinnamon buns-->
-        <select id = "packDropdown">
-          <!-- <option value = "0">1</option>
-          <option value = "1">3</option>
-          <option value = "2">6</option>
-          <option value = "3">12</option> -->
+        <select id = "packDropdown" onchange = "glazingChange(this)">
         </select>
 
         <br><br><br><br><br><br><br><br>
 
         <!--Total and button-->
-        <p class = "details_total">
-          $ 2.49
-        </p>
-
-        <button>
-          Add to Cart
-        </button>
-
+        <div class = "totalDetailPage">
+          <div>
+            <p class = "details_total" id = "dynamicPrice">
+              $ 2.49
+            </p>
+          </div>
+          <div>
+            <button class="addToCart">
+              Add to Cart
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </div> <br><br><br><br><br><br>
   </body>
 </html>

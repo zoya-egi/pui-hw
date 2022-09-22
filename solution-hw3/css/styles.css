@@ -158,6 +158,15 @@ div.items:hover {
     background-color: yellow;
 }
 
+div.totalDetailPage {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 155px;
+    margin-right: 90px;
+    max-width: 600px;
+
+}
+
 /* -------------------------------------------------------------------------------------------------------- */
 /* a tag classes */
 a {
@@ -248,8 +257,6 @@ p.details_total {
     display: inline-block;
     font-size: 25px;
     font-weight: 600;
-    margin-left: 28%;
-    margin-right: 13%;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -285,6 +292,11 @@ button.checkout {
 button:hover {
     font-weight: 600;
     background-color: yellow;
+
+}
+
+button.addToCart {
+    display: inline;
 }
 
 

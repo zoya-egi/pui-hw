@@ -8,8 +8,8 @@ class Glaze {
     }
 }
 
-const keepOriginal = new Glaze("Keep original", 0.50);
-const sugarMilk = new Glaze("Sugar milk", 0.50);
+const keepOriginal = new Glaze("Keep original", 0);
+const sugarMilk = new Glaze("Sugar milk", 0);
 const vanillaMilk = new Glaze("Vanilla milk", 0.50);
 const doubleChocolate = new Glaze("Double chocolate", 1.50);
 
@@ -24,7 +24,7 @@ class Packs {
 }
 
 const onePack = new Packs(1, 1);
-const threePack = new Packs(3,3);
+const threePack = new Packs(3, 3);
 const sixPack = new Packs(6, 5);
 const twelvePack = new Packs(12, 10);
 
@@ -48,13 +48,30 @@ for (i = 0; i < allPacks.length; i++) {
 
 //console.log(allGlazes[i])
 
-let glazeChoice;
-let packChoice;
+let basePrice = 2.49;
+let glazeChoice = 0;
+let packChoice = 1;
+let finalPrice;
 
 function glazingChange(element) {
     // get value of selected glazing option
     const priceChange = element.value;
-    console.log(priceChange);
+
+    for (i = 0; i < allGlazes.length; i++) {
+        if (allGlazes[i].glazeType == element.value) {
+            glazeChoice = allGlazes[i].glazePrice;
+        }
+    }
+
+    for (i = 0; i < allPacks.length; i++) {
+        if (allPacks[i].packSize == element.value) {
+            packChoice = allPacks[i].packPrice;
+        }
+    }
+
+    finalPrice = ((basePrice + glazeChoice) * packChoice).toFixed(2);
+    document.getElementById("dynamicPrice").innerHTML = "$ " + finalPrice;
+
 
 
     // add your code to do update the price ...
