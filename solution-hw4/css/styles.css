@@ -1,0 +1,300 @@
+/* flexbox classes */
+    /* HEADER */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerLogo {
+    padding: 2px;
+    width: 33%;
+}
+
+.containerContent {
+    width: 65%;
+    display: flex;
+    flex-direction:column;
+    align-content: space-around;
+}
+
+.containerContentUpper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navMenu {
+    padding-right: 80px;
+    margin-top: 60px;
+    padding-bottom: 10px;
+}
+
+.containerContentBottom {
+    display: flex;
+    flex-grow: 1;
+    padding-bottom: 2%;
+    align-items: flex-end;
+}
+
+    /* PRODUCT GALLERY */
+.flex_Gallery {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.flex_Gallery>* {
+    flex: 1 22%;
+    margin: 25px;
+  }
+
+  /* SHOPPING CART */
+  .cartContainer {
+    display:flex;
+    justify-content: flex-end;
+  }
+
+  .cartContent {
+    width: 66%;
+  }
+
+  .cartItem {
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 30px;
+  }
+
+  .cartItemUpper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .cartItemLower {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 3px;
+    padding-top: 3px;
+  }
+
+  .cartItemDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 8%;
+    flex: 1;
+  }
+
+  .cartCheckout {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2%;
+    padding-left: 20.5%;
+    padding-right: 8%;
+  }
+
+  .cartButton {
+    padding-top: 4%;
+    padding-right: 8%;
+    margin-left: auto;
+  }
+
+  /* DETAILS PAGE */
+
+  .detailsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8%;
+    margin-top: 6%;
+  }
+
+  .detailsContent {
+    width: 60%;
+    margin: auto;
+  }
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* image classes */
+img {
+    display: block;
+    border: 2px solid black;
+    width: 95%;
+    margin: auto;
+}
+
+img.logo {
+    border: 0px;
+}
+
+img.details {
+    width: 55%;
+    border: 3px solid black;
+}
+
+img.shop_items {
+    width: 15%;
+    margin: 0px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* div classes */
+div.items {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+div.items:hover p.gallery_description {
+    font-weight: 600;
+}
+
+div.items:hover {
+    background-color: yellow;
+}
+
+div.totalDetailPage {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 155px;
+    margin-right: 90px;
+    max-width: 600px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* a tag classes */
+a {
+    color: black;
+    text-decoration:none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+a.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a.current_page {
+    background-color: yellow;
+    font-weight: 600;
+    padding: 1px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* header 1 classes */
+h1 {
+    color: black;
+    font-size: 40px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* horizontal line classes */
+hr {
+    color: black;
+    border: 2px solid black;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* paragraph classes */
+p {
+    color: black;
+    margin: 0em;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+p.gallery_description {
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    padding-top: 5px;
+    margin-left: 7px;
+}
+
+p.gallery_price {
+    text-align: left;
+    margin-left: 7px;
+}
+
+p.remove {
+    font-size:15px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+p.shop_items {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: left;
+}
+
+p.shop_price {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+p.details {
+    text-align: left;
+    margin-left: 23%;
+    font-size: 30px;
+}
+
+p.details_total {
+    white-space: nowrap;
+    font-weight: 200;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* dropdown menu */
+select {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    margin-left: 23%;
+    margin-top: 5px;
+    width: 360px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 300;
+    border: 3px solid black;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* button styling */
+button {
+    background-color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    width: 170px;
+    height: 45px;
+    margin-left: 5px;
+}
+
+button.checkout {
+    display: block;
+    margin: auto;
+}
+
+button:hover {
+    font-weight: 600;
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+

@@ -8,6 +8,10 @@ class Glaze {
         this.glazeType = glazeType;
         this.glazePrice = glazePrice;
     }
+
+    priceChange() {
+        
+    }
 }
 
 // creating the objects using the Glaze class
@@ -62,8 +66,10 @@ let finalPrice;
 
 // calculates the final price 
 function glazingChange(element) {
+
     // this stores the value from the dropdown selection
     const priceChange = element.value;
+    console.log(priceChange);
 
     // if the value is from the glaze dropdown menu, run through the array that stored all Glaze objects
     for (i = 0; i < allGlazes.length; i++) {
@@ -89,3 +95,6 @@ function glazingChange(element) {
     // dynamically replace the element in html with the finalPrice
     document.getElementById("dynamicPrice").innerHTML = "$ " + finalPrice;
 }
+
+
+
