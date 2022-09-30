@@ -59,8 +59,8 @@ let glazeAdaptation = 0;
 let packAdaptation = 1;
 let basePrice;
 let finalPrice;
-let glazeChoice;
-let packChoice;
+let glazeChoice = "Keep original";
+let packChoice = 1;
 // calculates the final price 
 function glazingChange(element) {
 
@@ -103,7 +103,7 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
 
-
+// iterate through rolls dictionary
 for (roll in rolls) {
     if (rollType == roll) {
         document.querySelector("h1").textContent = roll + " Cinnamon Roll";
@@ -122,10 +122,10 @@ class Roll {
     }
 }
 
+//when user clicks "add to cart"
 function storeInfo() {
     let userSelection = new Roll(rollType, glazeChoice, packChoice, basePrice)
     cart.push(userSelection);
     console.log(cart);
 }
-
 

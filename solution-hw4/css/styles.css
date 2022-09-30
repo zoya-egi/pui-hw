@@ -104,7 +104,6 @@
   }
 
   /* DETAILS PAGE */
-
   .detailsContainer {
     display: flex;
     justify-content: space-between;
@@ -121,7 +120,6 @@
 /* image classes */
 img {
     display: block;
-    border: 2px solid black;
     width: 95%;
     margin: auto;
 }
@@ -132,12 +130,16 @@ img.logo {
 
 img.details {
     width: 55%;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 img.shop_items {
     width: 15%;
     margin: 0px;
+}
+
+img.gallery {
+    border: 2px solid black;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
