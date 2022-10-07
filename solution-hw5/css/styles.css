@@ -142,6 +142,10 @@ img.gallery {
     border: 2px solid black;
 }
 
+#image-template {
+    border: 2px solid black;
+}
+
 /* -------------------------------------------------------------------------------------------------------- */
 /* div classes */
 div.items {
