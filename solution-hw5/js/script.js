@@ -11,10 +11,10 @@ class Glaze {
 }
 
 // creating the objects using the Glaze class
-const keepOriginal = new Glaze("Keep original", 0);
-const sugarMilk = new Glaze("Sugar milk", 0);
-const vanillaMilk = new Glaze("Vanilla milk", 0.50);
-const doubleChocolate = new Glaze("Double chocolate", 1.50);
+const keepOriginal = new Glaze("Keep Original", 0);
+const sugarMilk = new Glaze("Sugar Milk", 0);
+const vanillaMilk = new Glaze("Vanilla Milk", 0.50);
+const doubleChocolate = new Glaze("Double Chocolate", 1.50);
 
 // class constructor for Pack objects
 class Packs {
@@ -47,6 +47,7 @@ let glazeChoice = "Keep original";
 let packChoice = 1;
 // calculates the final price 
 
+// this if statement is done since im sharing the javascript file across multiple HTML files, this idea was found on Slack
 if (document.URL.includes("product_details.html")) {
     // a loop to dynamically populate the glaze dropdown menu
     let glazeOptions = document.getElementById("glazeDropdown");
@@ -98,8 +99,6 @@ if (document.URL.includes("product_details.html")) {
     }
 }
 
-
-
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
@@ -114,79 +113,119 @@ for (roll in rolls) {
     }
 }
 
+// this class holds the roll properties
 class Roll {
+    glazeAdaptation; //this will hold the price adaptation based on glaze
+
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
         this.glazing = rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
+
+        // this if statement is done because "Original" is different than "Keep Original"
+
+        if (this.glazing == "Original") {
+            this.glazeAdaptation = keepOriginal.glazePrice;
+        }
+        else { // for everything else, it just finds the price adaptation as normal
+            this.glazeAdaptation = (allGlazes.find(item => item.glazeType == this.glazing)).glazePrice
+        }
+
+        // calculates and stores the price based off of the base price, glaze adaptation, and pack adaptation
+        this.calculatedPrice = (basePrice + this.glazeAdaptation) * allPacks.find(item => item.packSize === this.size).packPrice;
     }
+
 }
 
-// when user clicks "add to cart"
+// when user clicks "add to cart" (part of hw 4)
 function storeInfo() {
     let userSelection = new Roll(rollType, glazeChoice, packChoice, basePrice)
     cart.push(userSelection);
-    console.log(cart);
 }
 
-cart = []
 
-let cartObject1 = new Roll("Original", "Sugar Milk", 1, 2.49)
-let cartObject2 = new Roll("Walnut", "Vanilla Milk", 12, 3.49)
-let cartObject3 = new Roll("Raisin", "Sugar Milk", 3, 2.99)
-let cartObject4 = new Roll("Apple", "Original", 3, 3.49)
-
-
-
+// this if statement is done since im sharing the javascript file across multiple HTML files, this idea was found on Slack
 if (document.URL.includes("cart.html")) {
+    // create empty cart array
+    let Cart = []
 
-    cart = [cartObject1, cartObject2, cartObject3, cartObject4]
+    // creates cartObjects 
+    let cartObject1 = new Roll("Original", "Sugar Milk", 1, 2.49)
+    let cartObject2 = new Roll("Walnut", "Vanilla Milk", 12, 3.49)
+    let cartObject3 = new Roll("Raisin", "Sugar Milk", 3, 2.99)
+    let cartObject4 = new Roll("Apple", "Original", 3, 3.49)
+    
+    // create a set for the final cart
+    let finalCart = new Set();
 
+    // push objects to original set
+    cart = [cartObject1, cartObject2, cartObject3, cartObject4];
+    let totalPrice = 0;
+
+    // this function calculates the final price by iterating through the cart item prices and adds them together
+    function totalPriceCalc() {
+        totalPrice = 0;
+
+        //iterates through cart
+        for (items of finalCart) {
+            // does the math
+            totalPrice += items.calculatedPrice;
+        }
+        // rewrites the total price
+        document.querySelector("#cartTotal").innerHTML = "$ " + totalPrice.toFixed(2);
+    }
+
+    // this function deletes the template element and the cart item from the set. Then, it recalculates the final price and prints it
+    function deleteItem(element, cartItem) {
+        element.remove();
+        finalCart.delete(cartItem);
+        totalPriceCalc()
+    }
+
+    // this function creates the template elements
+    function createElement(cartItem) {
+        //pushes cart items into my set
+        finalCart.add(cartItem);
+
+        // creates template, clone, and cart element
+        const template = document.querySelector('#cartItem-template');
+        let clone = template.content.cloneNode(true);
+        let cartElement = clone.querySelector(".cartItem")
+
+        // deletes the cart element when "remove" is clicked (does so by calling the deleteItem function)
+        const btnDelete = cartElement.querySelector(".remove");
+        btnDelete.addEventListener('click', () => {
+            deleteItem(cartElement, cartItem);
+        });
+
+        // parent list that holds all template elements
+        let cartListElement = document.querySelector('#cartItemList');
+
+        // variables to be written in for each element
+        let elementImage = "./assets/products/" + rolls[cartItem.type].imageFile;
+        let elementName = cartItem.type;
+        let elementGlaze = cartItem.glazing;
+        let elementQuant = cartItem.size;
+
+
+        // this section populates the template with each item's specifications (image, type, glaze, pack, & price)
+        cartElement.querySelector("#image-template").src = elementImage;
+        cartElement.querySelector("#text-template").innerHTML = elementName + " Cinnamon Roll<br>" + "Glazing: "
+            + elementGlaze + "<br>Pack Size: " + elementQuant;
+        cartElement.querySelector("#itemPrices").innerHTML = "$ " + cartItem.calculatedPrice.toFixed(2);
+
+        // appends elements to the list element
+        cartListElement.append(cartElement);
+    }
+
+    // this loop does all the magic, it is what creates elements
     for (item in cart) {
-        console.log(cart[item])
         createElement(cart[item])
     }
 
-    function createElement(cartItem) {
-        console.log(cartItem.type)
-
-        // make a clone of the notecard template
-        console.log("step 1")
-        const template = document.querySelector('#cartItem-template');
-        const clone = template.content.cloneNode(true);
-
-        console.log("step 2")
-        // connect this clone to our notecard.element
-        // from this point we only need to refer to notecard.element
-        cartItem.element = clone.querySelector('.cartItem');
-        console.log(cartItem.element)
-
-        console.log("step 3")
-        // add the notecard clone to the DOM
-        // find the notecard parent (#notecard-list) and add our notecard as its child
-        const cartListElement = document.querySelector('#cartItemList');
-        cartListElement.prepend(cartItem.element);
-
-        // // populate the notecard clone with the actual notecard content
-        // updateElement(cartItem);
-    }
-
-    // function updateElement(cartItem) {
-    //     // get the HTML elements that need updating
-    //     const cartImageElement = cartItem.element.querySelector('#image-template');
-    //     //const noteTitleElement = notecard.element.querySelector('.note-title');
-    //     //const noteBodyElement = notecard.element.querySelector('.note-body');
-
-    //     // copy our notecard content over to the corresponding HTML elements
-    //     cartImageElement.src = "./assets/products/" + rolls[cartItem].imageFile;
-    //     //noteTitleElement.innerText = notecard.noteTitle;
-    //     //noteBodyElement.innerText = notecard.noteBody;
-    // }
-
-
-
-
+    // finally, calculate the final price (this is mostly used on page load and gets modifed after removing elements)
+    totalPriceCalc()
 }
 
 

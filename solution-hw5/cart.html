@@ -47,10 +47,11 @@
   <!--cart items listed in this div-->
   <div class="cartContainer">
     <div class="cartContent">
-      
-      <template id = "cartItem-template">
-        <div id="cartItemList">
-          <!--1st cart item, original cinnamon roll-->
+
+
+      <div id="cartItemList">
+        <!--1st cart item, original cinnamon roll-->
+        <template id="cartItem-template">
           <div class="cartItem">
             <div class="cartItemUpper">
               <!--Image-->
@@ -58,10 +59,10 @@
                 alt="original cinnamon roll">
               <div class="cartItemDescription">
                 <!--Description-->
-                <p class="shop_items" id="tester">
+                <p class="shop_items" id="text-template">
                   Original Cinnamon Roll<br>Glazing: Keep original<br>Pack Size: 1
                 </p>
-                <p class="shop_price">
+                <p class="shop_price" id = "itemPrices">
                   $ 2.49
                 </p>
               </div>
@@ -72,35 +73,9 @@
               </p>
             </div>
           </div>
-        </div>
-      </template>
-
-
-
-
-
-      <!--2st cart item, double chocolate cinnamon roll-->
-      <div class="cartItem">
-        <div class="cartItemUpper">
-          <!--Image-->
-          <img src="./assets/products/double-chocolate-cinnamon-roll.jpg" class="shop_items"
-            alt="double chocolate cinnamon roll">
-          <div class="cartItemDescription">
-            <!--Description-->
-            <p class="shop_items">
-              Double Chocolate Cinnamon Roll<br>Glazing: Sugar milk<br>Pack Size: 6
-            </p>
-            <p class="shop_price">
-              $ 27.45
-            </p>
-          </div>
-        </div>
-        <div class="cartItemLower">
-          <p class="remove">
-            Remove
-          </p>
-        </div>
+        </template>
       </div>
+
 
       <!--line break & total-->
       <hr>
@@ -110,7 +85,7 @@
             <p class="shop_items">
               Total
             </p>
-            <p class="shop_price">
+            <p class="shop_price" id = "cartTotal">
               $ 29.94
             </p>
           </div>
