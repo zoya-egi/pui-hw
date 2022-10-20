@@ -1,0 +1,118 @@
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
+const packPrices = {
+    1  : 1,
+    3  : 3,
+    6  : 5,
+    12 : 10
+}
+
+const glazePrices = {
+    "Keep original"          : 0,
+    "Sugar Milk"        : 0,
+    "Vanilla Milk"      : 0.50,
+    "Double Chocolate"  : 1.50
+}
+
+
+// function retrieveFromLocalStorage() {
+//     const notecardArrayString = localStorage.getItem('storedRolls');
+//   }
+let cart = [];
+
+if (localStorage.getItem('storedRolls') != null) {
+    console.log("retrieving from storage")
+    const cartArrayString = localStorage.getItem('storedRolls');
+    const cartArrayParsed = JSON.parse(cartArrayString);
+    for (parsedItem of cartArrayParsed) {
+        cart.push(parsedItem)
+    }
+}
+// else {
+//     console.log("Starting from empty cart")
+//     cart = [];
+// }
+
+let finalCart = cart;
+let totalPrice = 0;
+
+// this function calculates the final price by iterating through the cart item prices and adds them together
+function totalPriceCalc() {
+    totalPrice = 0;
+
+    //iterates through cart
+    for (items of finalCart) {
+        // does the math
+        totalPrice += (items.basePrice + glazePrices[items.glazing]) * packPrices[items.size];
+    }
+    // rewrites the total price
+    document.querySelector("#cartTotal").innerHTML = "$ " + totalPrice.toFixed(2);
+}
+
+function updateLocalStorage() {
+    localStorage.clear()
+    const cartArrayString = JSON.stringify(cart);
+    localStorage.setItem("storedRolls", cartArrayString);
+    console.log(localStorage.getItem("storedRolls"))
+}
+
+// this function deletes the template element and the cart item from the set. Then, it recalculates the final price and prints it
+function deleteItem(element, cartItem) {
+    element.remove();
+    for (removeIndex in cart) {
+        if (cartItem == cart[removeIndex]) {
+            finalCart.splice(removeIndex, 1);
+        }
+    }
+    updateLocalStorage()
+    totalPriceCalc()
+}
+
+// this function creates the template elements
+function createElement(cartItem) {
+
+    // creates template, clone, and cart element
+    const template = document.querySelector('#cartItem-template');
+    let clone = template.content.cloneNode(true);
+    let cartElement = clone.querySelector(".cartItem")
+
+    // deletes the cart element when "remove" is clicked (does so by calling the deleteItem function)
+    const btnDelete = cartElement.querySelector(".remove");
+    btnDelete.addEventListener('click', () => {
+        deleteItem(cartElement, cartItem);
+    });
+
+    // parent list that holds all template elements
+    let cartListElement = document.querySelector('#cartItemList');
+
+    // variables to be written in for each element
+    let elementImage = "./assets/products/" + rolls[cartItem.type].imageFile;
+    let elementName = cartItem.type;
+    let elementGlaze = cartItem.glazing;
+    let elementQuant = cartItem.size;
+    let elementPrice = (cartItem.basePrice + glazePrices[cartItem.glazing]) * packPrices[cartItem.size];
+
+    // this section populates the template with each item's specifications (image, type, glaze, pack, & price)
+    cartElement.querySelector("#image-template").src = elementImage;
+    cartElement.querySelector("#text-template").innerHTML = elementName + " Cinnamon Roll<br>" + "Glazing: "
+                                                          + elementGlaze + "<br>Pack Size: " + elementQuant;
+    cartElement.querySelector("#itemPrices").innerHTML = "$ " + elementPrice.toFixed(2);
+
+    // appends elements to the list element
+    cartListElement.append(cartElement);
+}
+
+// this loop does all the magic
+for (item of finalCart) {
+    createElement(item)
+}
+
+// finally, calculate the final price (this is mostly used on page load and gets modifed after removing elements)
+totalPriceCalc()

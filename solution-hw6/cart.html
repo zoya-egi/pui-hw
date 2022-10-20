@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <script src="./js/rollsData.js" defer></script>
+  <script src="./js/shoppingCart" defer></script>
+</head>
+
+
+<body>
+  <!--Header of page-->
+  <div class="container">
+    <!--Logo that links to product page-->
+    <div class="containerLogo">
+      <a href="index.html">
+        <img src="./assets/logo/logo-01.svg" alt="Logo of Bun Bun Bake Shop" class="logo">
+      </a>
+    </div>
+    <!--Menu Links-->
+    <div class="containerContent">
+      <div class="containerContentUpper">
+        <div class="navMenu">
+          <a href="./index.html">PRODUCTS</a>
+        </div>
+        <div class="navMenu">
+          <a href="./cart.html" class="current_page">CART</a>
+        </div>
+      </div>
+      <div>
+        <br>
+        <hr>
+      </div>
+      <!--Header-->
+      <div class="containerContentBottom">
+        <h1>
+          Shopping Cart
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <!--cart items listed in this div-->
+  <div class="cartContainer">
+    <div class="cartContent">
+
+
+      <div id="cartItemList">
+        <!--1st cart item, original cinnamon roll-->
+        <template id="cartItem-template">
+          <div class="cartItem">
+            <div class="cartItemUpper">
+              <!--Image-->
+              <img src="./assets/products/original-cinnamon-roll.jpg" id="image-template" class="shop_items"
+                alt="original cinnamon roll">
+              <div class="cartItemDescription">
+                <!--Description-->
+                <p class="shop_items" id="text-template">
+                  Original Cinnamon Roll<br>Glazing: Keep original<br>Pack Size: 1
+                </p>
+                <p class="shop_price" id = "itemPrices">
+                  $ 2.49
+                </p>
+              </div>
+            </div>
+            <div class="cartItemLower">
+              <p class="remove">
+                Remove
+              </p>
+            </div>
+          </div>
+        </template>
+      </div>
+
+
+      <!--line break & total-->
+      <hr>
+      <div class="cartItem">
+        <div class="cartItemUpper">
+          <div class="cartCheckout">
+            <p class="shop_items">
+              Total
+            </p>
+            <p class="shop_price" id = "cartTotal">
+              $ 0.00
+            </p>
+          </div>
+        </div>
+        <div class="cartButton">
+          <button class="checkout">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
