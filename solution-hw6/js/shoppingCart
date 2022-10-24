@@ -1,3 +1,4 @@
+// roll class and constructor
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
@@ -7,6 +8,7 @@ class Roll {
     }
 }
 
+// these dictionaries, packPrices and glazePrices, are used to streamline price adaptations based on user selection
 const packPrices = {
     1  : 1,
     3  : 3,
@@ -15,31 +17,36 @@ const packPrices = {
 }
 
 const glazePrices = {
-    "Keep original"          : 0,
+    "Keep original"     : 0,
     "Sugar Milk"        : 0,
     "Vanilla Milk"      : 0.50,
     "Double Chocolate"  : 1.50
 }
 
-
-// function retrieveFromLocalStorage() {
-//     const notecardArrayString = localStorage.getItem('storedRolls');
-//   }
+// initializing an empty cart array
 let cart = [];
 
+// checks to see if local storage is empty or not
+// IF local storage contains information on roll instances, then retrieve that data and push it into the initialized cart
 if (localStorage.getItem('storedRolls') != null) {
-    console.log("retrieving from storage")
+
+    console.log("Note: Local storage contains cart items. Retrieving cart from storage.")
+    
+    // use JSON and parsing to extract roll instances from info stored in local storage
     const cartArrayString = localStorage.getItem('storedRolls');
     const cartArrayParsed = JSON.parse(cartArrayString);
+    
+    // push each cart item into the cart array
     for (parsedItem of cartArrayParsed) {
         cart.push(parsedItem)
     }
-}
-// else {
-//     console.log("Starting from empty cart")
-//     cart = [];
-// }
+} // OTHERWISE, just use an empty cart. I also wanted to console log whether the user is beginning with a new cart or not
+else {
 
+    console.log("Note: No cart items found in local storage on page load. User starts with an empty cart")
+}
+
+// initialize the final cart from the current saved cart and a total price variable
 let finalCart = cart;
 let totalPrice = 0;
 
@@ -57,20 +64,30 @@ function totalPriceCalc() {
 }
 
 function updateLocalStorage() {
+    // first want to clear storage and then resave it based off of the current cart
     localStorage.clear()
+
+    //stringify cart and then save it to local storage
     const cartArrayString = JSON.stringify(cart);
     localStorage.setItem("storedRolls", cartArrayString);
-    console.log(localStorage.getItem("storedRolls"))
+    
+    console.log(cart)
 }
 
 // this function deletes the template element and the cart item from the set. Then, it recalculates the final price and prints it
 function deleteItem(element, cartItem) {
+
+    // remove the item from the DOM
     element.remove();
+
+    // this removes the element from the cart array by finding its index and then splicing it
     for (removeIndex in cart) {
         if (cartItem == cart[removeIndex]) {
             finalCart.splice(removeIndex, 1);
         }
     }
+
+    // update local storage and calculate the final price
     updateLocalStorage()
     totalPriceCalc()
 }
@@ -109,7 +126,7 @@ function createElement(cartItem) {
     cartListElement.append(cartElement);
 }
 
-// this loop does all the magic
+// this loop does all the magic, it is what creates, updates, and loads everything on the DOM
 for (item of finalCart) {
     createElement(item)
 }

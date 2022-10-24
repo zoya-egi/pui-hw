@@ -118,32 +118,49 @@ class Roll {
     }
 }
 
+let cart = [];
+
+// checks to see if local storage is empty or not
+// IF local storage contains information on roll instances, then retrieve that data and push it into the initialized cart
 if (localStorage.getItem('storedRolls') != null) {
-    console.log("retrieving from storage")
+    
+    console.log("Note: Local storage contains cart items. Retrieving cart from storage.")
+    
+    // use JSON and parsing to extract roll instances from info stored in local storage
     const cartArrayString = localStorage.getItem('storedRolls');
     const cartArrayParsed = JSON.parse(cartArrayString);
-    cart = []
+    
+    // push each cart item into the cart array
     for (parsedItem of cartArrayParsed) {
         cart.push(parsedItem)
     }
 }
-else {
-    console.log("Starting from empty cart")
-    cart = [];
+else { // OTHERWISE, just use an empty cart. I also wanted to console log whether the user is beginning with a new cart or not
+    console.log("Note: No cart items found in local storage on page load. User starts with an empty cart")
 }
 
 
 // when user clicks "add to cart" (part of hw 4)
 function storeInfo() {
+    // create a new instance
     let userSelection = new Roll(rollType, glazeChoice, packChoice, basePrice)
+    
+    // push into the cart
     cart.push(userSelection);
+
+    // save the cart to the local storage
     saveToLocalStorage()
 }
 
 function saveToLocalStorage(){
+    
+    //stringify cart
     const cartArrayString = JSON.stringify(cart);
+   
+    // store cart into local storage
     localStorage.setItem("storedRolls", cartArrayString);
-    console.log(localStorage.getItem("storedRolls"))
+    
+    console.log(cart)
 }
 
 
