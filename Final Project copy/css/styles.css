@@ -31,6 +31,12 @@ h1 {
     padding-bottom: 10%;
 }
 
+#title {
+    color: #000;
+    background-color: #AFF4D0;
+    padding-top: 1000px;
+}
+
 
 #stickyRocks {
     position: absolute;
@@ -38,6 +44,30 @@ h1 {
     width: 100%;
     height: 800px;
     animation: aura 2s infinite;
+}
+
+#polaroidFrame {
+    width: 66%;
+    position: absolute;
+    top: 3030px;
+    left: 17%;
+}
+
+#peopleFilm {
+    position: absolute;
+    top: 3110px;
+    width: 50%;
+    left: 25%;
+    animation: filmDevelop 10s 1; 
+}
+
+@keyframes filmDevelop{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -54,31 +84,37 @@ div.opener {
 }
 
 div.opener2 {
-    position: static;
-    padding-top: 10%;
-    margin-top: -5%;
+    padding-top: 5%;
+    margin-top: -60px;
     background-color: white;
-    height: 800px;
+    height: 650px;
 }
 
 div.opener3 {
     background-color: #1E2C36;
-    padding-top: 300px;
     padding-bottom: 550px;
     z-index: 2;
 }
 
 div.opener4 {
-    background-color: black;
+    background-color: white;
     padding-top: 200px;
-    height: 700px;
+    height: 1100px;
 }
 
 #watermark {
     width: 100%;
     position: absolute;
-    top: 1800px;
+    top: 1585px;
     z-index: -0;
+    animation: fadeIn 1s 1;
+    box-shadow: 0px -5px 5px #888;
+}
+
+#watermarkBottom {
+    width: 100%;
+    position: absolute;
+    top: 2600px;
 }
 
 
@@ -92,6 +128,7 @@ div.opener4 {
 }
 
 #hookToTitle {
+    padding-top: 200px;
     text-align: left;
     padding-left: 50px;
 }
@@ -107,8 +144,9 @@ div.opener4 {
     width: 100%;
 }
 
-#openEyes,
-#closeEyes {
+
+
+button {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size: 35px;
@@ -130,10 +168,7 @@ div.opener4 {
 }
 
 
-#openEyes:hover,
-#openEyes:focus,
-#closeEyes:hover,
-#closeEyes:focus {
+button:hover {
     background-color: #1E2C36;
     box-shadow: white 0 10px 20px -10px;
 }
@@ -170,7 +205,7 @@ div.opener4 {
     font-family: "Quicksand";
     color: white;
     position: absolute;
-    top: 2250px;
+    top: 1950px;
     left: 50px;
 }
 
@@ -222,23 +257,28 @@ div.opener4 {
 }
 
 
-@keyframes aura{
-    0%{
+@keyframes aura {
+    0% {
         background-image: url('../assets/6.png');
     }
-    20%{
+
+    20% {
         background-image: url('../assets/5.png');
     }
-    40%{
+
+    40% {
         background-image: url('../assets/4.png');
     }
-    60%{
+
+    60% {
         background-image: url('../assets/3.png');
     }
-    80%{
+
+    80% {
         background-image: url('../assets/4.png');
     }
-    100%{
+
+    100% {
         background-image: url('../assets/5.png');
     }
 }
@@ -251,7 +291,7 @@ div.opener4 {
     height: 32px;
     display: inline-block;
     position: absolute;
-    top: 2290px;
+    top: 2000px;
     left: 45px;
     border-radius: 50px;
     overflow: hidden;
@@ -260,9 +300,9 @@ div.opener4 {
     cursor: pointer;
     background-color: #707070;
     transition: background-color ease 0.3s;
-  }
-  
-  .toggle:before {
+}
+
+.toggle:before {
     content: "on off";
     display: block;
     position: absolute;
@@ -279,17 +319,176 @@ div.opener4 {
     text-indent: -22px;
     word-spacing: 37px;
     color: #fff;
-    text-shadow: -1px -1px rgba(0,0,0,0.15);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.15);
     white-space: nowrap;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
-  }
-  
-  .toggle:checked {
-    background-color:#75C5C5;
+}
+
+.toggle:checked {
+    background-color: #75C5C5;
     box-shadow: 0 1px 2px white;
-  }
-  
-  .toggle:checked:before {
+}
+
+.toggle:checked:before {
     left: 32px;
-  }
+}
+
+
+
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+
+    38% {
+        transform: scale(0.8, 1) rotate(160deg);
+    }
+
+    40% {
+        transform: scale(0.8, 1) rotate(160deg);
+    }
+
+    78% {
+        transform: scale(1.1) rotate(-20deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes moveToSun {
+    100% {
+        transform: scale(.8) translate(-600px, 700px);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.shifting {
+    width: 200px;
+    height: 200px;
+    margin: 20% auto;
+    background: #B99B69;
+    animation: shifter 3s 1;
+}
+
+#shiftShapes {
+    margin-top: 130px;
+}
+
+@keyframes shifter {
+    
+    0% {
+        width: 200px;
+        height: 200px;
+    }
+    15% {
+        width: 300px;
+        height: 100px;
+    }
+
+    30% {
+        width: 200px;
+        border-radius: 0%;
+        height: 200px;
+    }
+
+    45% {
+        border-radius: 50%;
+    }
+
+    60% {
+        border-radius: 0%;
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-135deg);
+    }
+
+    90% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        width: 200px;
+        height: 200px;
+
+    }
+}
+
+.bothEyes {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.bothEyes .eye {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 0 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 45px black;
+}
+
+.bothEyes .eye::before{
+    content: "";
+    position: absolute;
+    background: black;
+    top: 40%;
+    left: 53px;
+    width: 90px;
+    height: 90px;
+    border-radius:50%;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px 0px #1E2C36 ;
+    animation: eyeMoves 3s 1;
+}
+
+@keyframes eyeMoves {
+    0% {
+        top: 40%;
+        left: 45px;
+    }
+    20% {
+        top: 45%;
+        left: 30px;
+    }
+    40% {
+        top: 45%;
+        left: 90px;
+    }
+    60% {
+        top: 15%;
+        left: 30px;
+    }
+    80% {
+        top: 15%;
+        left: 100px;
+    }
+    100% {
+        top: 40%;
+        left: 55px;
+    }
+
+
+}
