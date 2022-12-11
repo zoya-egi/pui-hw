@@ -46,8 +46,7 @@
     </div>
 
     <div class="opener3">
-      <img src="assets/mountains.png" id="watermark" alt="Image of mountain range against a dark solid green-blue background. On toggle, the northern lights appear.">
-      <!-- <img src="assets/mountains2.png" id="watermarkBottom"> -->
+      <img src="assets/mountains.png" id="watermark" alt="Mountain range against a dark solid green-blue background">
       <label title = "Toggle on or off the northern lights background" for = "toggleBtn">Northern Lights</label>
       <input class="toggle" type="checkbox" id="toggleBtn">
       <p id="toggleDesc">Magic Mode</p>
@@ -81,6 +80,8 @@
 
         <div id="situationWrapper">
           <h3 id = "instructions"> Select options from the dropdowns below to see how the various parts of a situation interact.</h3>
+
+          <label title = "Immediate Environment" for = "immediateEnv">Select Immediate Environment</label>
           <h4>Your immediate physical and social environment</h4>
           <select id="immediateEnv">
             <option value="outside" selected="selected">Outside</option>
@@ -88,6 +89,7 @@
             <option value="work">Work</option>
           </select>
 
+          <label title = "Implied Environment" for = "impliedEnv">Select Implied Environment</label>
           <h4>Your implied physical and social environment</h4>
           <select id="impliedEnv">
             <option value="good" selected="selected">Good</option>
@@ -95,6 +97,7 @@
             <option value="lovely">Lovely</option>
           </select>
 
+          <label title = "Mental Environment" for = "mentalEnv">Select Mental Environment</label>
           <h4>Your internal mental situation</h4>
           <select id="mentalEnv">
             <option value="happy" selected="selected">Happy</option>
@@ -124,7 +127,7 @@
       <h2 class="hypothesisText"> We don't know why<br>people do what they do.</h2>
       <h3>We tend to think that a person's behavior is reflective of their disposition and that our behavior is consequent to factors outside of our control.</h3>
 
-      <label title = "Toggle for how we view others versus ourselves" for = "toggle2">fundamental Attribution Error perception</label>
+      <label title = "Toggle for how we view others versus ourselves" for = "toggleBtn2">fundamental Attribution Error perception</label>
       <div id="h2Toggle">
         <h3 id="others">How we view others</h3>
         <input class="toggle2" type="checkbox" id="toggleBtn2">
