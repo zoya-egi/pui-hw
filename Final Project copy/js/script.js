@@ -166,6 +166,9 @@ function situationSentence(){
     else if (impliedChoice == "gloomy" && (mentalChoice == "sad" || mentalChoice == "angry")){
         document.getElementById("situationSentenceP2").innerHTML = "I'm " + mentalChoice + " enough as it is."; 
     }
+    else {
+        document.getElementById("situationSentenceP2").innerHTML = "I feel so " + mentalChoice + "!";
+    }
 }
 
 function overTime() {

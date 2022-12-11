@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Product Gallery</title>
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <link rel="stylesheet" type="text/css" href="./css/hyp1.css">
+  <link rel="stylesheet" type="text/css" href="./css/hypothesesStyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -21,174 +21,184 @@
 </head>
 
 <body>
-  <!-- <div class = "scroll-tracker"></div> -->
+
+  <!-- These divs are for the first few screens leading up to and including the title -->
   <div>
-
-  </div>
-
-  <div class="opener">
-    <h1 class="tlt" id="openingText">Social interactions are fundamental<br>to the human experience.</h1>
-    <div id="stickyRocks"></div>
-  </div>
-
-  <div class="opener2" id="opener2">
-
-    <h1 id="opener2Text">From the moment we open our <button id="openEyes">eyes</button>,</h1>
-    <h1 id="opener2Text">our social interactions <button id="shapeShift">shape</button> us into who we are.</h1>
-
-    <div id="eyes">
-      <div class="eye"></div>
-      <div class="eye"></div>
+    <div class="opener">
+      <h1 class="tlt" id="openingText">Social interactions are fundamental<br>to the human experience.</h1>
+      <!-- This is the waves at the very beginning, it is sticky to create an effect of the text hiding -->
+      <div id="stickyRocks"></div>
     </div>
 
-    <div id="shiftShapes"> </div>
+    <div class="opener2" id="opener2">
+      <!-- This has an interactive button to show eyes (can be clicked and unclicked) -->
+      <h1 id="opener2Text">From the moment we open our <button id="openEyes">eyes</button>,</h1>
 
-  </div>
+      <!-- This has an interactive button to show shape-shifting (can be clicked and unclicked) -->
+      <!-- I want to credit this code and its respective css to https://codepen.io/apvarun/pen/JbvwWd-->
+      <h1 id="opener2Text">our social interactions <button id="shapeShift">shape</button> us into who we are.</h1>
 
-
-
-
-  <div class="opener3">
-    <img src="assets/mountains.png" id="watermark">
-    <img src="assets/mountains2.png" id="watermarkBottom">
-    <input class="toggle" type="checkbox" id="toggleBtn">
-    <p id="toggleDesc">Magic Mode</p>
-    <h1 id="hookToTitle">In order to better understand this <span id="phenomena"> phenomena</span>,<br>the field of
-      Social Psychology was born.</h1>
-  </div>
-
-  <div class="opener4">
-    <button id="film">Develop Film</button>
-    <img id="peopleFilm" src="assets/people.gif">
-    <img id="polaroidFrame" src="assets/polaroidFrame.png">
-    <h1 id="title">The Five Hypothesis of Social Psychology</h1>
-
-  </div>
-
-
-
-  <div class="hypothesis">
-    <h1 class="tagline">HYPOTHESIS #1</h1>
-
-    <h2 class="hypothesisText"> Situations are Powerful.</h2>
-
-    <h3>Situations guide our experiences, despite it often being invisible to us.</h3>
-
-    <div id="hyp1Body">
-
-      <div id="situationWrapper">
-        <h3> Select options from the dropdowns below to see how the various parts of a situation interact.</h3>
-        <h4>Your immediate physical and social environment</h4>
-        <select id="immediateEnv">
-          <option value="outside" selected="selected">Outside</option>
-          <option value="home">Home</option>
-          <option value="work">Work</option>
-        </select>
-
-        <h4>Your implied physical and social environment</h4>
-        <select id="impliedEnv">
-          <option value="good" selected="selected">Good</option>
-          <option value="gloomy">Gloomy</option>
-          <option value="lovely">Lovely</option>
-        </select>
-
-        <h4>Your internal mental situation</h4>
-        <select id="mentalEnv">
-          <option value="happy" selected="selected">Happy</option>
-          <option value="angry">Angry</option>
-          <option value="sad">Sad</option>
-        </select>
-
-
-
+      <!-- This part is the actual eyes that are shown when the "eyes button is clicked" -->
+      <!-- This was loosely inspired by https://www.youtube.com/watch?v=_1Pr2v9wClc-->
+      <div id="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
       </div>
 
-      <div id="situationBuild">
-        <img id="immediateImg" src="assets/outside.png">
-        <img id="situationBuilders" src="assets/Happy.png">
+      <!-- This is the actual shape-shifting after the button is clicked or unclicked -->
+      <div id="shiftShapes"> </div>
+    </div>
+
+    <div class="opener3">
+      <!-- <img src="assets/mountains.png" id="watermark">
+      <img src="assets/mountains2.png" id="watermarkBottom"> -->
+      <input class="toggle" type="checkbox" id="toggleBtn">
+      <p id="toggleDesc">Magic Mode</p>
+      <h1 id="hookToTitle">In order to better understand this <span id="phenomena"> phenomena</span>,<br>the field of
+        Social Psychology was born.</h1>
+    </div>
+
+    <div class="opener4">
+      <button id="film">Develop Film</button>
+      <img id="peopleFilm" src="assets/people.gif">
+      <img id="polaroidFrame" src="assets/polaroidFrame.png">
+      <h1 id="title">The Five Hypothesis of Social Psychology</h1>
+
+    </div>
+  </div>
+
+
+
+  <!-- These divs are for the first few screens leading up to and including the title -->
+  <div>
+    <div class="hypothesis">
+      <h1 class="tagline">HYPOTHESIS #1</h1>
+
+      <h2 class="hypothesisText"> Situations are Powerful.</h2>
+
+      <h3>Situations guide our experiences, despite it often being invisible to us.</h3>
+
+      <div id="hyp1Body">
+
+        <div id="situationWrapper">
+          <h3> Select options from the dropdowns below to see how the various parts of a situation interact.</h3>
+          <h4>Your immediate physical and social environment</h4>
+          <select id="immediateEnv">
+            <option value="outside" selected="selected">Outside</option>
+            <option value="home">Home</option>
+            <option value="work">Work</option>
+          </select>
+
+          <h4>Your implied physical and social environment</h4>
+          <select id="impliedEnv">
+            <option value="good" selected="selected">Good</option>
+            <option value="gloomy">Gloomy</option>
+            <option value="lovely">Lovely</option>
+          </select>
+
+          <h4>Your internal mental situation</h4>
+          <select id="mentalEnv">
+            <option value="happy" selected="selected">Happy</option>
+            <option value="angry">Angry</option>
+            <option value="sad">Sad</option>
+          </select>
+
+
+
+        </div>
+
+        <div id="situationBuild">
+          <img id="immediateImg" src="assets/outside.png">
+          <img id="situationBuilders" src="assets/Happy.png">
+        </div>
+
+      </div>
+      <br>
+      <h2 class="hypothesisText" id="situationSentenceP1">Being outside today was good.</h2>
+      <h2 class="hypothesisText" id="situationSentenceP2">I feel so happy!</h2>
+      <br>
+      <h3>Notice how changing one thing affects the feelings that are evoked.<br>How do your immediate, implied, and
+        mental situations<br>affect the way you experience the world?</h3>
+    </div>
+
+    <div class="hypothesis">
+      <h1 class="tagline"> HYPOTHESIS #2</h1>
+      <h2 class="hypothesisText"> We don't know why<br>people do what they do.</h2>
+      <h3>We tend to think that a person's behavior is reflective of their disposition.<br>However, we also tend to
+        think
+        that our behavior is consequent to factors outside of our control.</h3>
+
+      <div id="h2Toggle">
+        <h3 id="others">How we view others</h3>
+        <input class="toggle2" type="checkbox" id="toggleBtn2">
+        <h3 id="ourselves">How we view ourselves</h3>
+      </div>
+      <div id="fae">
+        <div class="faeTxtImg">
+          <h3 class="faeText" id="othersTxt">"They made a mess because<br>they are such a messy person."</h3>
+          <img class="faeImg" id="othersImg" src="./assets/otherFAE.png">
+        </div>
+        <div class="faeTxtImg">
+          <h3 class="faeText" id="ourselvesTxt">"This week was so crazy for me that<br>I didn't have time to clean!"
+          </h3>
+          <img class="faeImg" id="ourselvesImg" src="./assets/selfFAE.png">
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="hypothesis">
+      <h1 class="tagline">HYPOTHESIS #3</h1>
+      <h2 class="hypothesisText"> We don't know what we don't know</h2>
+      <h3 id="afSubText">We are generally are pretty bad at predicting how we will feel about an outcome or
+        experience.<br>We tend to
+        overestimate the impact of an event and underestimate our abilities to cope and adapt to negative ones.</h3>
+      <h3 id="afText">Well, my partner and I are breaking up.</h3>
+      <img id="afImg" src="assets/breakup1.png">
+
+      <div class="sliderContainer">
+        <h3 class="sliderLabel">NOW</h3><input type="range" min="1" max="4" value="1" class="slider" id="overTime">
+        <h3 class="sliderLabel">FUTURE</h3>
+      </div>
+    </div>
+
+    <div class="hypothesis">
+      <h1 class="tagline">HYPOTHESIS #4</h1>
+      <h2 class="hypothesisText"> It is amazing that we are as accurate as we are about why people do what they do and
+        what kind of people they are.</h2>
+      <h3>Our experiences help guide us in making snapshot judgements that are pretty accurate.</h3>
+      <button id="flashImg">Begin Judging!</button>
+      <img id="stage" src="assets/stage.png">
+      <br><br><br>
+      <h3>What feelings do the flashing images portray? How can you tell?</h3>
+    </div>
+
+    <div class="hypothesis">
+      <h1 class="tagline">HYPOTHESIS #5</h1>
+      <h2 class="hypothesisText">People have two fundamental social motivations: </h2>
+      <h2 class="hypothesisText" id="hypothesisSubText">People want to be liked and have a need to belong.</h2>
+      <h2 class="hypothesisText" id="hypothesisSubText">People want to be accurate, consistent, and authentic.</h2>
+      <h3>We have a need to be liked and our presence to be known.</h3>
+      <div id="textBox">
+        <img class="textImgs" src="assets/left.png">
+        <form>
+          <h4><label for="w3review">In the text box below, write about what being authentic means for you.<br>Take some
+              time to make yourself known.</label></h4>
+          <textarea id="w3review" name="w3review" rows="4" cols="50">(and always remember, you belong!)</textarea>
+        </form>
+        <img class="textImgs" src="assets/right.png">
       </div>
 
     </div>
-    <br>
-    <h2 class="hypothesisText" id="situationSentenceP1">Being outside today was good.</h2>
-    <h2 class="hypothesisText" id="situationSentenceP2">What a happy day outside!</h2>
-    <br>
-    <h3>Notice how changing one thing affects the feelings that are evoked.<br>How do your immediate, implied, and
-      mental situations<br>affect the way you experience the world?</h3>
-  </div>
-
-  <div class="hypothesis">
-    <h1 class="tagline"> HYPOTHESIS #2</h1>
-    <h2 class="hypothesisText"> We don't know why<br>people do what they do.</h2>
-    <h3>We tend to think that a person's behavior is reflective of their disposition.<br>However, we also tend to think
-      that our behavior is consequent to factors outside of our control.</h3>
-
-    <div id="h2Toggle">
-      <h3 id="others">How we view others</h3>
-      <input class="toggle2" type="checkbox" id="toggleBtn2">
-      <h3 id="ourselves">How we view ourselves</h3>
-    </div>
-    <div id="fae">
-      <div class="faeTxtImg">
-        <h3 class="faeText" id="othersTxt">"They made a mess because<br>they are such a messy person."</h3>
-        <img class="faeImg" id="othersImg" src="./assets/otherFAE.png">
-      </div>
-      <div class="faeTxtImg">
-        <h3 class="faeText" id="ourselvesTxt">"This week was so crazy for me that<br>I didn't have time to clean!"</h3>
-        <img class="faeImg" id="ourselvesImg" src="./assets/selfFAE.png">
-      </div>
-    </div>
-
 
   </div>
 
-  <div class="hypothesis">
-    <h1 class="tagline">HYPOTHESIS #3</h1>
-    <h2 class="hypothesisText"> We don't know what we don't know</h2>
-    <h3 id="afSubText">We are generally are pretty bad at predicting how we will feel about an outcome or
-      experience.<br>We tend to
-      overestimate the impact of an event and underestimate our abilities to cope and adapt to negative ones.</h3>
-    <h3 id="afText">Well, my partner and I are breaking up.</h3>
-    <img id="afImg" src="assets/breakup1.png">
-
-    <div class="sliderContainer">
-      <h3 class="sliderLabel">NOW</h3><input type="range" min="1" max="4" value="1" class="slider" id="overTime">
-      <h3 class="sliderLabel">FUTURE</h3>
-    </div>
-  </div>
-
-  <div class="hypothesis">
-    <h1 class="tagline">HYPOTHESIS #4</h1>
-    <h2 class="hypothesisText"> It is amazing that we are as accurate as we are about why people do what they do and
-      what kind of people they are.</h2>
-    <h3>Our experiences help guide us in making snapshot judgements that are pretty accurate.</h3>
-    <button id="flashImg">Begin Judging!</button>
-    <img id="stage" src="assets/stage.png">
-    <br><br><br>
-    <h3>What feelings do the flashing images portray? How can you tell?</h3>
-  </div>
-
-  <div class="hypothesis">
-    <h1 class="tagline">HYPOTHESIS #5</h1>
-    <h2 class="hypothesisText">People have two fundamental social motivations: </h2>
-    <h2 class="hypothesisText" id="hypothesisSubText">People want to be liked and have a need to belong.</h2>
-    <h2 class="hypothesisText" id="hypothesisSubText">People want to be accurate, consistent, and authentic.</h2>
-    <h3>We have a need to be liked and our presence to be known.</h3>
-    <div id = "textBox">
-      <img class = "textImgs" src = "assets/left.png">
-      <form>
-        <h4><label for="w3review">In the text box below, write about what being authentic means for you.<br>Take some time to make yourself known.</label></h4>
-        <textarea id="w3review" name="w3review" rows="4" cols="50">(and always remember, you belong!)</textarea>
-      </form>
-      <img class = "textImgs" src = "assets/right.png">
-    </div>
-
-  </div>
-
-  <div id = "ending">
+  <div id="ending">
     <h1>Acknowledgments</h1>
     <h2>Content for this site came from a course taught by Professor Smurda at UCLA in 2021.<br>
-      This site was created to fulfill my final project for the PUI course at CMU.<br><br>Images and other materials were sourced from Canva.<br>
+      This site was created to fulfill my final project for the PUI course at CMU.<br><br>Images and other materials
+      were sourced from Canva.<br>
     </h2>
   </div>
 
