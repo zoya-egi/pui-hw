@@ -102,6 +102,7 @@ div.opener3 {
     padding-bottom: 40%;
     z-index: 2;
     height: 138%;
+    margin-top: -2%;
 }
 
 div.opener4 {
@@ -113,7 +114,7 @@ div.opener4 {
 #watermark {
     width: 100%;
     position: absolute;
-    top: 1540px;
+    top: 1500px;
     z-index: -0;
     animation: fadeIn 1s 1;
     box-shadow: 0px -5px 5px #888;
