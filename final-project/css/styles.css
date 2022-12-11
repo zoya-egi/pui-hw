@@ -116,7 +116,6 @@ div.opener4 {
     position: absolute;
     top: 1500px;
     z-index: -0;
-    animation: fadeIn 1s 1;
     box-shadow: 0px -5px 5px #888;
 }
 
@@ -188,12 +187,6 @@ button:hover {
     position: absolute;
     top: 1900px;
     left: 50px;
-}
-
-.aurora {
-    animation: shakeX;
-    animation-duration: 2s;
-    animation-iteration-count: infinite ease;
 }
 
 .toggle {
