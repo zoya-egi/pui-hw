@@ -57,8 +57,9 @@ h1 {
     width: 50%;
     left: 25%;
     margin-top: 5%;
-    animation: filmDevelop 10s 1; 
+    animation: filmDevelop 20s 1; 
 }
+
 
 #polaroid {
     position: relative;

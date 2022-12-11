@@ -30,12 +30,12 @@ function shapeShifter() { //adding shape-shifting and removing eyes
 //---------------------------------------------------------------------------------------------------
 //TURNS ON NORTHERN LIGHTS
 document.getElementById("toggleBtn").addEventListener("input", auroraON);
-let toggleNum = 0;
+let toggleNum1 = 0;
 
 //turn on northern lights effect
 function auroraON() {
-    toggleNum += 1; //I used a toggle and modulus so if its an odd number it means the button is on
-    if (toggleNum % 2 == 1) {
+    toggleNum1 += 1; //I used a toggle and modulus so if its an odd number it means the button is on
+    if (toggleNum1 % 2 == 1) {
         document.getElementById("watermark").src = "./assets/auroraON.gif";
         document.getElementById("hookToTitle").style.zIndex = 1;
     }
@@ -142,6 +142,7 @@ function situationSentence() {
 //---------------------------------------------------------------------------------------------------
 //HYPOTHESIS 2
 document.getElementById("toggleBtn2").addEventListener("input", fae);
+let toggleNum = 0;
 function fae() {
     toggleNum += 1;
     if (toggleNum % 2 == 1) {
