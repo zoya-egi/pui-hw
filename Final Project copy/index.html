@@ -32,11 +32,7 @@
 
     <div class="opener2" id="opener2">
       <!-- This has an interactive button to show eyes (can be clicked and unclicked) -->
-      <h1 id="opener2Text">From the moment we open our <button id="openEyes">eyes</button>,</h1>
-
-      <!-- This has an interactive button to show shape-shifting (can be clicked and unclicked) -->
-      <!-- I want to credit this code and its respective css to https://codepen.io/apvarun/pen/JbvwWd-->
-      <h1 id="opener2Text">our social interactions <button id="shapeShift">shape</button> us into who we are.</h1>
+      <h1 id="opener2Text">From the moment we open our <button id="openEyes">eyes</button>,<br>our social interactions <button id="shapeShift">shape</button> us into who we are.</h1>
 
       <!-- This part is the actual eyes that are shown when the "eyes button is clicked" -->
       <!-- This was loosely inspired by https://www.youtube.com/watch?v=_1Pr2v9wClc-->
@@ -50,8 +46,8 @@
     </div>
 
     <div class="opener3">
-      <!-- <img src="assets/mountains.png" id="watermark">
-      <img src="assets/mountains2.png" id="watermarkBottom"> -->
+      <img src="assets/mountains.png" id="watermark">
+      <!-- <img src="assets/mountains2.png" id="watermarkBottom"> -->
       <input class="toggle" type="checkbox" id="toggleBtn">
       <p id="toggleDesc">Magic Mode</p>
       <h1 id="hookToTitle">In order to better understand this <span id="phenomena"> phenomena</span>,<br>the field of
@@ -60,8 +56,10 @@
 
     <div class="opener4">
       <button id="film">Develop Film</button>
-      <img id="peopleFilm" src="assets/people.gif">
-      <img id="polaroidFrame" src="assets/polaroidFrame.png">
+      <div id = "polaroid">
+        <img id="peopleFilm" src="assets/film.png">
+        <img id="polaroidFrame" src="assets/polaroidFrame.png">
+      </div>
       <h1 id="title">The Five Hypothesis of Social Psychology</h1>
 
     </div>
@@ -150,16 +148,16 @@
 
     <div class="hypothesis">
       <h1 class="tagline">HYPOTHESIS #3</h1>
-      <h2 class="hypothesisText"> We don't know what we don't know</h2>
+      <h2 class="hypothesisText"> We don't know what we don't know.</h2>
       <h3 id="afSubText">We are generally are pretty bad at predicting how we will feel about an outcome or
-        experience.<br>We tend to
+        experience.<br><br>We tend to
         overestimate the impact of an event and underestimate our abilities to cope and adapt to negative ones.</h3>
       <h3 id="afText">Well, my partner and I are breaking up.</h3>
       <img id="afImg" src="assets/breakup1.png">
 
       <div class="sliderContainer">
-        <h3 class="sliderLabel">NOW</h3><input type="range" min="1" max="4" value="1" class="slider" id="overTime">
-        <h3 class="sliderLabel">FUTURE</h3>
+        <h3 class="sliderLabel1">NOW</h3><input type="range" min="1" max="4" value="1" class="slider" id="overTime">
+        <h3 class="sliderLabel2">FUTURE</h3>
       </div>
     </div>
 

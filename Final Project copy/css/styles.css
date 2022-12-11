@@ -1,82 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Rock+Salt&display=swap');
 
-
-
 body {
     background-color: white;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+    background-image: url("../assets/background.png");
 }
 
 h1 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     text-align: center;
-    font-size: 35px;
+    font-size: 175%;
     color: white;
 }
 
+
+/* opening text and designs*/
 #opener2Text {
+    padding-top: 10%;
     color: #1E2C36;
 }
 
 
 #openingText {
-    padding-top: 200px;
+    padding-top: 15%;
     position: sticky;
     top: 0;
     padding-bottom: 10%;
 }
 
-#title {
-    color: #000;
-    margin-top: 540px;
-    z-index: 1;
-    position: relative;
-    visibility: hidden;
-    font-family: 'Rock Salt', cursive;
-    font-size: 28px;
-}
-
-
-
 #stickyRocks {
     position: absolute;
-    top: 10%;
+    top: 5%;
     width: 100%;
     height: 800px;
+    margin-left: auto;
+    margin-right: auto;
     animation: aura 2s infinite;
 }
 
+/* polaroid/title images and text */
 #polaroidFrame {
     width: 66%;
     position: absolute;
-    top: 2800px;
+    top: 190%;
     left: 17%;
 }
 
 #peopleFilm {
     position: absolute;
     visibility: hidden;
-    top: 2890px;
+    top: 265%;
     width: 50%;
     left: 25%;
-    animation: filmDevelop 20s 1; 
+    margin-top: 5%;
+    animation: filmDevelop 10s 1; 
 }
 
-
-@keyframes filmDevelop{
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+#polaroid {
+    position: relative;
 }
 
+#title {
+    color: #000;
+    margin-top: 37%;
+    z-index: 1;
+    position: relative;
+    visibility: hidden;
+    font-family: 'Rock Salt', cursive;
+    font-size: 130%;
+}
 
+/* opening imgs and divs */
 img {
     display: flex;
     align-content: flex-end;
@@ -100,15 +98,15 @@ div.opener2 {
 
 div.opener3 {
     background-color: #1E2C36;
-    padding-bottom: 530px;
+    padding-bottom: 40%;
     z-index: 2;
-    height: 490px;
+    height: 138%;
 }
 
 div.opener4 {
-    background-image: url("../assets/hyp1.png");
     padding-top: 100px;
-    height: 950px;
+    height: 175%;
+    margin-bottom: 20%;
 }
 
 #watermark {
@@ -120,43 +118,28 @@ div.opener4 {
     box-shadow: 0px -5px 5px #888;
 }
 
-#watermarkBottom {
-    width: 100%;
-    position: absolute;
-    top: 2450px;
-    z-index: -1;
-}
-
-
 #phenomena {
     position: relative;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    font-size: 35px;
+    font-size: 110%;
     background-color: color-change;
     animation: color-change 2s infinite;
 }
 
 #hookToTitle {
-    padding-top: 200px;
+    padding-top: 20%;
     text-align: left;
     padding-left: 50px;
+    color: white;
+    font-weight: 200;
+    position: relative;
 }
 
-#openerTransition {
-    background-color: white;
-    margin-top: -10%;
-}
-
-#divTransition {
-    position: absolute;
-    top: 1350px;
-    width: 100%;
-}
 
 #film {
-    margin-top: 7%;
-    margin-left: 60%;
+    margin-top: 3%;
+    margin-left: 65%;
     background-color: #B99B69;
     padding-left: 1%;
     padding-right: 1%;
@@ -165,7 +148,7 @@ div.opener4 {
 button {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    font-size: 35px;
+    font-size: 80%;
     color: white;
     background: #5D7772;
     border-radius: 999px;
@@ -189,114 +172,25 @@ button:hover {
     box-shadow: white 0 10px 20px -10px;
 }
 
+/* for eyes */
 .openEyesGif {
     padding-top: 1%;
     animation: zoomInDown 1s;
 }
 
 
-.scroll-tracker {
-    height: 0.5rem;
-    background-color: darkgoldenrod;
-    position: fixed;
-    inset: 0 0 auto;
-    transform-origin: left;
-}
-
-#spinningRock {
-    width: 30%;
-}
-
-#hookToTitle {
-    color: white;
-    font-weight: 200;
-    position: relative;
-}
-
-#skyline {
-    width: 100%;
-}
-
 #toggleDesc {
     font-family: "Quicksand";
     color: white;
     position: absolute;
-    top: 1950px;
+    top: 1900px;
     left: 50px;
 }
 
 .aurora {
     animation: shakeX;
-    /* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s;
-    /* don't forget to set a duration! */
     animation-iteration-count: infinite ease;
-}
-
-
-@keyframes color-change {
-    0% {
-        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    20% {
-        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    40% {
-        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    60% {
-        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    80% {
-        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    100% {
-        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-
-@keyframes aura {
-    0% {
-        background-image: url('../assets/6.png');
-    }
-
-    20% {
-        background-image: url('../assets/5.png');
-    }
-
-    40% {
-        background-image: url('../assets/4.png');
-    }
-
-    60% {
-        background-image: url('../assets/3.png');
-    }
-
-    80% {
-        background-image: url('../assets/4.png');
-    }
-
-    100% {
-        background-image: url('../assets/5.png');
-    }
 }
 
 .toggle {
@@ -307,7 +201,7 @@ button:hover {
     height: 32px;
     display: inline-block;
     position: absolute;
-    top: 2000px;
+    top: 1950px;
     left: 45px;
     border-radius: 50px;
     overflow: hidden;
@@ -319,7 +213,7 @@ button:hover {
 }
 
 .toggle:before {
-    content: "on off";
+    content: "";
     display: block;
     position: absolute;
     z-index: 2;
@@ -350,49 +244,6 @@ button:hover {
     left: 32px;
 }
 
-
-@keyframes move {
-    0% {
-        transform: scale(1);
-    }
-
-    38% {
-        transform: scale(0.8, 1) rotate(160deg);
-    }
-
-    40% {
-        transform: scale(0.8, 1) rotate(160deg);
-    }
-
-    78% {
-        transform: scale(1.1) rotate(-20deg);
-    }
-
-    80% {
-        transform: scale(1.1) rotate(-20deg);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes moveToSun {
-    100% {
-        transform: scale(.8) translate(-600px, 700px);
-    }
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .shifting {
     width: 200px;
     height: 200px;
@@ -404,6 +255,40 @@ button:hover {
 #shiftShapes {
     margin-top: 130px;
 }
+
+
+.bothEyes {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.bothEyes .eye {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 0 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 45px black;
+}
+
+.bothEyes .eye::before{
+    content: "";
+    position: absolute;
+    background: black;
+    top: 40%;
+    left: 53px;
+    width: 90px;
+    height: 90px;
+    border-radius:50%;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px 0px #1E2C36 ;
+    animation: eyeMoves 3s 1;
+}
+
 
 @keyframes shifter {
     
@@ -446,38 +331,6 @@ button:hover {
     }
 }
 
-.bothEyes {
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 200px;
-}
-
-.bothEyes .eye {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    margin: 0 40px;
-    border-radius: 50%;
-    box-shadow: 0 5px 45px black;
-}
-
-.bothEyes .eye::before{
-    content: "";
-    position: absolute;
-    background: black;
-    top: 40%;
-    left: 53px;
-    width: 90px;
-    height: 90px;
-    border-radius:50%;
-    border: 2px solid #000;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 20px 0px #1E2C36 ;
-    animation: eyeMoves 3s 1;
-}
-
 @keyframes eyeMoves {
     0% {
         top: 40%;
@@ -505,4 +358,78 @@ button:hover {
     }
 
 
+}
+
+
+@keyframes color-change {
+    0% {
+        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    20% {
+        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    40% {
+        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    60% {
+        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    80% {
+        background: -webkit-linear-gradient(315deg, #75C5C5, #AFF4D0, #75C5C5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: -webkit-linear-gradient(315deg, #AFF4D0, #75C5C5, #AFF4D0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes aura {
+    0% {
+        background-image: url('../assets/6.png');
+    }
+
+    20% {
+        background-image: url('../assets/5.png');
+    }
+
+    40% {
+        background-image: url('../assets/4.png');
+    }
+
+    60% {
+        background-image: url('../assets/3.png');
+    }
+
+    80% {
+        background-image: url('../assets/4.png');
+    }
+
+    100% {
+        background-image: url('../assets/5.png');
+    }
+}
+
+@keyframes filmDevelop{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
