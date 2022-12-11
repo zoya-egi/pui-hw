@@ -45,7 +45,9 @@ h3 {
 }
 
 h4 {
-    width: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     font-family: "Quicksand";
     font-weight: 100;
     font-size: 100%;
@@ -316,6 +318,7 @@ select {
   label {
     color: #fff;
     font-weight: 200;
+    visibility: hidden;
   }
 
   /* hypothesis 4*/
@@ -345,6 +348,8 @@ select {
     min-width: 75%;
     max-width: 100%;
     min-height: 25%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 

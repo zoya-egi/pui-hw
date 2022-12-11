@@ -46,9 +46,9 @@
     </div>
 
     <div class="opener3">
-      <img src="assets/mountains.png" id="watermark" alt="Image of mountain range against a dark solid green-blue background. On toggle, this changes to the same mountain ranges with the northern lights behind them.">
+      <img src="assets/mountains.png" id="watermark" alt="Image of mountain range against a dark solid green-blue background. On toggle, the northern lights appear.">
       <!-- <img src="assets/mountains2.png" id="watermarkBottom"> -->
-      <label title = "Toggle on or off the northern lights background" for = "toggleBtn"></label>
+      <label title = "Toggle on or off the northern lights background" for = "toggleBtn">Northern Lights</label>
       <input class="toggle" type="checkbox" id="toggleBtn">
       <p id="toggleDesc">Magic Mode</p>
       <h1 id="hookToTitle">In order to better understand this <span id="phenomena"> phenomena</span>,<br>the field of
@@ -124,6 +124,7 @@
       <h2 class="hypothesisText"> We don't know why<br>people do what they do.</h2>
       <h3>We tend to think that a person's behavior is reflective of their disposition and that our behavior is consequent to factors outside of our control.</h3>
 
+      <label title = "Toggle for how we view others versus ourselves" for = "toggle2">fundamental Attribution Error perception</label>
       <div id="h2Toggle">
         <h3 id="others">How we view others</h3>
         <input class="toggle2" type="checkbox" id="toggleBtn2">
@@ -152,9 +153,12 @@
       <h3 id="afText">Well, my partner and I are breaking up.</h3>
       <img id="afImg" src="assets/breakup1.png" alt = "A drawn character with a broken heart and gray cloud over its head after a breakup">
 
+      <label title = "Slider to go through Time" for = "overTime">Break ups over time</label>
       <div class="sliderContainer">
-        <h3 class="sliderLabel1">NOW</h3><input type="range" min="1" max="4" value="1" class="slider" id="overTime">
+        <h3 class="sliderLabel1">NOW</h3>
+        <input type="range" min="1" max="4" value="1" class="slider" id="overTime">
         <h3 class="sliderLabel2">FUTURE</h3>
+        
       </div>
       <h3 id="afSubText">We tend to overestimate the impact of an event and underestimate our abilities to cope and adapt to negative ones.</h3>
     </div>
@@ -179,9 +183,9 @@
       <div id="textBox">
         <img class="textImgs" src="assets/left.png" alt = "two drawn happy characters on the left side of screen">
         <form>
-          <h4><label for="w3review">In the text box below, write about what being authentic means for you.<br>Take some
-              time to make yourself known.</label></h4>
-          <textarea id="w3review" name="w3review" rows="4" cols="50">(and always remember, you belong!)</textarea>
+          <h4>In the text box below, write about what being authentic means for you.Take some time to make yourself known.</h4>
+          <label for="textBox">User writes what being authentic means to you.</label>
+          <textarea id="textBox" name="textBox" rows="4" cols="50">(and always remember, you belong!)</textarea>
         </form>
         <img class="textImgs" src="assets/right.png" alt = "two drawn happy characters on the right side of screen">
       </div>
