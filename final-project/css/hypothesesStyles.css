@@ -34,9 +34,9 @@ h2 {
 }
 
 h3 {
-    color: black;
+    color: white;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     margin-bottom: 3%;
     font-size: 120%;
     width: 50%;
@@ -47,10 +47,10 @@ h3 {
 h4 {
     width: 100%;
     font-family: "Quicksand";
-    font-weight: 400;
-    font-size: 110%;
+    font-weight: 100;
+    font-size: 100%;
     margin-bottom: 0;
-    color: black;
+    color: white;
 }
 
 select {
@@ -241,6 +241,10 @@ select {
     color: white;
   }
 
+  #ourselves {
+    color: #1B2C2E;
+  }
+
   #ourselvesImg {
     filter: grayscale(1);
   }
@@ -270,6 +274,7 @@ select {
     margin-right: auto;
     padding: 1%;
     border-radius: 25px;
+    color: #1B2C2E;
   }
 
   #afSubText {
@@ -306,6 +311,11 @@ select {
     margin-left: 1%;
     display: flex;
     justify-content: flex-start;
+  }
+
+  label {
+    color: #fff;
+    font-weight: 200;
   }
 
   /* hypothesis 4*/
